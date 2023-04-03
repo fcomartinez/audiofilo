@@ -1,0 +1,68 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.footer {
+    background-color: v.$cafe;
+    padding-top: v.$separacion;
+
+    &__grid {
+        @include m.grid(1, v.$separacion);
+
+        @include m.tablet {
+            @include m.grid(3, v.$separacion)
+        }
+    }
+
+    &__widget {
+        text-align: center;
+    }
+
+    &__titulo {
+        margin: 0;
+        color: v.$cafeDorado;
+    }
+
+    &__navegacion {
+        margin-top: 2rem;
+    }
+
+    &__enlace {
+        display: block;
+        margin-bottom: 2rem;
+        color: v.$cafeClaro;
+        transition-property: transform;
+        transition-duration: 300ms;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+
+        &:hover {
+            color: v.$cafeDorado;
+            transform: scale(1.1);
+        }
+    }
+
+    &__texto {
+        max-width: 40rem;
+        margin-inline: auto;
+        color: v.$cafeClaro;
+    }
+
+    &__logo {
+        width: 20rem;
+        margin-inline: auto;
+    }
+
+    &__titulo-logo {
+        text-transform: uppercase;
+        font-size: 3rem;
+        color: v.$blanco;
+    }
+
+    &__copyright {
+        text-align: center;
+        color: v.$cafeClaro;
+        padding-block: 2rem;
+    }
+}

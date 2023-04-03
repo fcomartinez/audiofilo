@@ -1,0 +1,134 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.header {
+    background-image: url(../img/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+    padding-top: v.$separacion;
+
+    @include m.tablet {
+        background-position: top;
+        padding-top: 4rem;
+    }
+
+    &__barra {
+        @include m.tablet {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &__logo {
+        margin-inline: auto;
+        width: 25rem;
+
+        @include m.tablet {
+            margin: 0;
+            width: 15rem;
+        }
+
+        @include m.desktop {
+            width: 20rem
+        }
+
+        @include m.desktopXL {
+            width: 25rem;
+        }
+    }
+
+    &__titulo-logo {
+        text-align: center;
+        text-transform: uppercase;
+        color: v.$blanco;
+
+        @include m.tablet {
+            font-size: 2.5rem;
+        }
+
+        @include m.desktop {
+            font-size: 3rem;
+        }
+
+        @include m.desktopXL {
+            font-size: 4rem;
+        }
+    }
+
+    &__navegacion {
+        margin-top: v.$separacion;
+
+        @include m.tablet {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        @include m.desktop {
+            gap: 2rem;
+        }
+    }
+
+    &__enlace {
+        display: block;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 2.5rem;
+        font-family: v.$fuenteTitulo;
+        font-weight: 700;
+        color: v.$grisClaro;
+        margin-bottom: 4rem;
+        transition-property: transform;
+        transition-duration: 300ms;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+
+        &:hover {
+            cursor: pointer;
+            color: v.$cafeDorado;
+            transform: scale(1.2);
+        }
+
+        @include m.tablet {
+            margin-bottom: 0;
+            font-size: 1.8rem;
+        }
+
+        @include m.desktop {
+            font-size: 2rem;
+        }
+    }
+
+    &__eslogan {
+        padding-block: calc(v.$separacion * 2);
+        max-width: 40rem;
+
+        @include m.tablet {
+            padding-block: calc(v.$separacion * 3);
+            max-width: 60rem;
+        }
+    }
+
+    &__eslogan-texto {
+        margin: 0;
+        line-height: 1.5;
+        color: v.$grisClaro;
+        font-size: 4rem;
+        font-family: v.$fuenteTitulo;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-align: center;
+
+        @include m.tablet {
+            text-align: left;
+        }
+
+        @include m.desktopXL {
+            font-size: 6rem;
+        }
+    }
+}

@@ -1,0 +1,29 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.suscripcion {
+    padding-block: v.$separacion;
+
+    &__grid {
+        @include m.grid(1, v.$separacion);
+        align-items: center;
+
+        @include m.tablet {
+            @include m.grid(2, v.$separacion)
+        }
+    }
+
+    &__contenido {
+        text-align: center;
+    }
+
+    &__texto {
+        font-size: 2.8rem;
+        line-height: 1.5;
+        margin: 0
+    }
+
+    &__enlace {
+        @include m.enlace;
+    }
+}

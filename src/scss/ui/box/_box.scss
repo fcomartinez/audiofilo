@@ -1,0 +1,48 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.box {
+    padding-block: v.$separacion;
+
+    &__grid {
+        @include m.grid(1, v.$separacion);
+        align-items: center;
+
+        @include m.tablet {
+            @include m.grid(2, v.$separacion);
+        }
+    }
+
+    &__titulo {
+        span {
+            color: v.$cafe;
+        }
+    }
+
+    &__texto {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    &__listado {
+        text-align: center;
+    }
+
+    &__item { 
+        margin-bottom: 1.5rem;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    &__imagen {
+        grid-row: 1/2;
+        margin: 2rem auto 0 auto;
+        width: 30rem;
+
+        @include m.tablet {
+            grid-column: 2/3;
+        }
+    }
+}

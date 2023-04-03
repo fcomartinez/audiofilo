@@ -1,0 +1,41 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.testimonial {
+    margin-block: v.$separacion;
+
+    .testimonial__grid {
+        @include m.grid(1, v.$separacion);
+
+        @include m.tablet {
+            @include m.grid(2, v.$separacion);
+            align-items: center;
+        }
+    }
+
+    .testimonial__descripcion {
+        text-align: center;
+        max-width: 30rem;
+        margin-inline: auto;
+    }
+
+    .testimonial__card {
+        background-color: v.$blanco;
+        width: 30rem;
+        margin-inline: auto;
+        padding: 2rem 4rem;
+        text-align: center;
+        box-shadow: 2px 2px 5px 1px rgb(0 0 0 / .6);
+    }
+
+    .testimonial__autor {
+        margin: 0 0 2rem 0;
+        text-transform: uppercase;
+        font-size: 2rem;
+        line-height: 1.5;
+    }
+
+    .testimonial__opinion {
+        margin: 0;
+    }
+}

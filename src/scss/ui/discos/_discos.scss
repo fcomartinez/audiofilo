@@ -1,0 +1,48 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.discos {
+    padding-block: v.$separacion;
+
+    &__titulo {
+        span {
+            color: v.$cafe;
+        }
+    }
+
+    &__grid {
+        @include m.grid(1, v.$separacion);
+
+        @include m.tablet {
+            @include m.grid(2, v.$separacion);
+            align-items: center;
+        }
+
+        @include m.desktop {
+            @include m.grid(3, v.$separacion);
+        }
+    }
+
+    &__texto {
+        text-align: center;
+        margin: 2rem 0 0 0;
+
+        @include m.tablet {
+            text-align: left;
+            grid-column: 2/3;
+        }
+
+        @include m.desktop {
+            grid-column: 2/4;
+        }
+    }
+
+    &__imagen {
+        box-shadow: 2px 2px 10px 2px rgb(0 0 0 / .5);
+
+        @include m.tablet {
+            grid-row: 1/2;
+            grid-column: 1/2;
+        }
+    }
+}
